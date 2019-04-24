@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        Amount
+        <input type="text" id="sotien"/><br/>
+        From Currency <br/>
+        <select id="MGbandau">
+            <option value="VND" >VNdong</option>
+            <option value="USD">USD</option>
+        </select>
+        To Currency
+        <select id="MGdoi">
+            <option value="VND">VNdong</option>
+            <option value="USD">USD</option>
+        </select><br/>
+        <button type="submit" onclick="Quydoi()">Convert</button><br/>
+        ket qua <p id="ketqua"></p>
+    <script >
+        function Quydoi() {
+            var Tien=document.getElementById('sotien').value;
+            var MG1=document.getElementById('MGbandau').value;
+            var MG2=document.getElementById('MGdoi').value;
+            var Sotien=parseFloat(Tien);
+            if (MG1 === "VND"&&MG2 === "USD"){
+                CT=Sotien*23000;
+            }
+            else if (MG1 === "USD"&&MG2 === "VND") {
+                CT=Sotien/23000;;
+            }
+            if (MG1===MG2){
+                alert("chon lai menh gia");
+        }
+        document.getElementById('ketqua').innerHTML = CT
+        }
+    </script>
+</body>
+</html>
